@@ -1,12 +1,12 @@
 import React from "react"
 import Navbar from "../reusables/navbar"
 
-function Login() {
+function Statistics() {
 	return (
-		<div className="login h-screen">
-			<h1>Login</h1>
+		<div>
+			<h1>Statistics</h1>
 		</div>
 	)
 }
 
-export default Login
+export default Statistics

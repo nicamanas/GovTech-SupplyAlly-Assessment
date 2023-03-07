@@ -38,5 +38,18 @@
 }
 
 .navbar {
-	color: #ffffff;
+	background-color: #ffffff;
+}
+
+.navbar-text {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #305367;
+}
+
+.login {
+	background-color: #f5f7f9;
 }
