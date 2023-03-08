@@ -50,6 +50,67 @@
 	color: #305367;
 }
 
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+
+	background: #305367;
+	height: 20%;
+}
+
 .login {
 	background-color: #f5f7f9;
+}
+
+.login h1 {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.card {
+	background-color: #ffffff;
+}
+
+.login-text {
+	width: 295px;
+	height: 32px;
+
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	color: #33363a;
+}
+
+.login-field {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 12px;
+	gap: 8px;
+
+	width: 295px;
+	height: 48px;
+	background-color: #ffffff;
+	border: 1px solid #a1a8ae;
+	border-radius: 4px;
+}
+
+.login-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 24px;
+	gap: 8px;
+
+	width: 295px;
+	height: 48px;
+
+	background-color: #305367;
+	border-radius: 4px;
 }

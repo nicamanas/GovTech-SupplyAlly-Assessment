@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { UserContext } from "../App"
 import { Link, Outlet } from "react-router-dom"
+import Footer from "./footer"
 
 function Navbar() {
 	const { user } = useContext(UserContext)
@@ -10,8 +11,8 @@ function Navbar() {
 		<>
 			<nav>
 				<div className="w-full">
-					<div className="flex border-b-2 justify-between px-4 py-8 space-x-5">
-						<div className="flex flex-row navbar justify-start space-x-5 px-4">
+					<div className="flex border-b-2 justify-center px-4 py-8 space-x-5 md:justify-between">
+						<div className="flex flex-row navbar space-x-5 px-4">
 							{/* Website Logo */}
 							<a className="flex gap-2 mr-4">
 								<Link to="/">
@@ -23,15 +24,16 @@ function Navbar() {
 									/>
 								</Link>
 							</a>
-							<div className="navbar-text">
+							{/* Hide these in mobile */}
+							<div className="navbar-text hidden md:flex">
 								<Link to="/track">Track</Link>
 							</div>
-							<div className="navbar-text">
+							<div className="navbar-text hidden md:flex">
 								<Link to="/statistics">Statistics</Link>
 							</div>
 						</div>
 
-						<div className="flex flex-row navbar-text justify-end px-4">
+						<div className="flex flex-row navbar-text justify-end px-4 hidden md:flex">
 							{user ? (
 								<p>&#x1F44B; Hi! Please log in!</p>
 							) : (
@@ -41,7 +43,6 @@ function Navbar() {
 					</div>
 				</div>
 			</nav>
-			<Outlet />
 		</>
 	)
 }

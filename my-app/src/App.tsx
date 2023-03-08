@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import Login from "./components/login"
 import "./App.css"
-import Navbar from "./reusables/navbar"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Track from "./components/track"
 import Statistics from "./components/statistics"
+import Layout from "./reusables/layout"
 
 export const UserContext = React.createContext({ user: {} })
 
@@ -16,7 +16,7 @@ function App() {
 			<Routes>
 				<Route
 					path="/"
-					element={<Navbar />}>
+					element={<Layout />}>
 					<Route
 						index
 						element={<Login />}
