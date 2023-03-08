@@ -1,13 +1,24 @@
-import React from "react"
-import Navbar from "../reusables/navbar"
+import React, { useContext } from "react"
+import { UserContext } from "../reusables/layout"
+import { useNavigate } from "react-router-dom"
 
 function Login() {
+	const navigate = useNavigate()
+	const { user, setUser } = useContext(UserContext)
+
+	function handleSubmit(e: any) {
+		e.preventDefault()
+		setUser(e.target.name.value)
+		alert("Welcome, " + e.target.name.value + "!")
+		navigate("/track")
+	}
+
 	return (
 		<div className="login flex flex-col items-center justify-center">
 			<div className="card">
 				<div className="py-2 px-2 justify-center">
 					<h1 className="login-text">Login</h1>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<div className="py-3 flex justify-center">
 							<input
 								type="text"

@@ -1,10 +1,15 @@
 import React, { useContext } from "react"
-import { UserContext } from "../App"
 import { Link } from "react-router-dom"
+import { UserContext } from "./layout"
 
 function Navbar() {
-	const { user } = useContext(UserContext)
+	const { user, setUser } = useContext(UserContext)
 	const [navbarOpen, setNavbarOpen] = React.useState(false)
+
+	function logout(): void {
+		setUser("")
+		alert("You have logged out.")
+	}
 
 	return (
 		<>
@@ -34,9 +39,14 @@ function Navbar() {
 
 						<div className="flex flex-row navbar-text justify-end px-4 hidden md:flex">
 							{user ? (
-								<p>&#x1F44B; Hi! Please log in!</p>
+								<>
+									&#x1F44B; Hi
+									<p className="ml-1 font-bold">{user}! </p>
+									<p className="mx-2"> | </p>
+									<a onClick={logout}>Logout</a>
+								</>
 							) : (
-								<p>&#x1F44B; Hi Alex! | Logout</p>
+								<p>&#x1F44B; Hi! Please log in!</p>
 							)}
 						</div>
 					</div>
