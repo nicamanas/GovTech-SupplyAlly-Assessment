@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { UserContext } from "../App"
-import { Link, Outlet } from "react-router-dom"
-import Footer from "./footer"
+import { Link } from "react-router-dom"
 
 function Navbar() {
 	const { user } = useContext(UserContext)

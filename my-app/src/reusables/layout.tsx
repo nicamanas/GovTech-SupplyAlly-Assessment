@@ -9,7 +9,7 @@ function Layout() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false)
 
 	return (
-		<div className="h-screen">
+		<div className="h-screen flex flex-col">
 			<Navbar />
 			<Outlet />
 			<Footer />

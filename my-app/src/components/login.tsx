@@ -4,9 +4,9 @@ import Navbar from "../reusables/navbar"
 function Login() {
 	return (
 		<div className="login flex flex-col items-center justify-center">
-			<div className="card block p-6 max-w-lg py-4 justify-center">
+			<div className="card">
 				<div className="py-2 px-2 justify-center">
-					<h1 className="m-2 login-text">Login</h1>
+					<h1 className="login-text">Login</h1>
 					<form>
 						<div className="py-3 flex justify-center">
 							<input
@@ -17,7 +17,7 @@ function Login() {
 								required
 							/>
 						</div>
-						<div className="py-2 flex justify-center">
+						<div className="py-3 flex justify-center">
 							<input
 								type="submit"
 								value="Login"
