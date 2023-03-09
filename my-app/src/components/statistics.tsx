@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import StatisticTable from "../reusables/statisticTable"
 import axios from "axios"
 import { IStatistic } from "../types/statisticsTypes"
 import { useNavigate } from "react-router-dom"
+import { UserContext } from "../reusables/layout"
 
 function Statistics() {
 	const navigate = useNavigate()
+	const { user } = useContext(UserContext)
+
 	const [selectDate, setSelectDate] = useState(new Date(Date.now()))
 	const [statisticsData, setStatisticsData] = useState<null | IStatistic>(
 		null
@@ -42,8 +45,12 @@ function Statistics() {
 	}
 
 	useEffect(() => {
+		if (!user) {
+			navigate("/")
+			alert("Please login before using this feature!")
+		}
 		getStatisticsData()
-	})
+	}, [user])
 
 	return (
 		<div className="background flex flex-col items-center justify-start py-4">

@@ -1,17 +1,26 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import axios from "axios"
 import { ITrackingResult } from "../types/trackingTypes"
 import Status from "../reusables/status"
 import { useNavigate } from "react-router-dom"
+import { UserContext } from "../reusables/layout"
 
 function Track() {
+	const navigate = useNavigate()
+	const { user } = useContext(UserContext)
+
+	useEffect(() => {
+		if (!user) {
+			navigate("/")
+			alert("Please login before using this feature!")
+		}
+	}, [])
+
 	const [trackingId, setTrackingId] = useState<string>("")
 	const [trackingData, setTrackingData] = useState<null | ITrackingResult>(
 		null
 	)
 	const [isChecked, setIsChecked] = useState<boolean>(false)
-
-	const navigate = useNavigate()
 
 	function handleCheckedChange(e: any) {
 		setIsChecked(e.target.checked)

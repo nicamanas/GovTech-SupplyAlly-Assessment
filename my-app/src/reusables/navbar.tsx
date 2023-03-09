@@ -1,14 +1,16 @@
 import React, { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { UserContext } from "./layout"
 
 function Navbar() {
+	const navigate = useNavigate()
 	const { user, setUser } = useContext(UserContext)
 	const [navbarOpen, setNavbarOpen] = React.useState(false)
 
 	function logout(): void {
 		setUser("")
 		alert("You have logged out.")
+		navigate("/")
 	}
 
 	return (
