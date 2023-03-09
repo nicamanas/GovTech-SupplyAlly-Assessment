@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react"
 import StatisticTable from "../reusables/statisticTable"
 import axios from "axios"
 import { IStatistic } from "../types/statisticsTypes"
+import { useNavigate } from "react-router-dom"
 
 function Statistics() {
+	const navigate = useNavigate()
 	const [selectDate, setSelectDate] = useState(new Date(Date.now()))
 	const [statisticsData, setStatisticsData] = useState<null | IStatistic>(
 		null
@@ -75,8 +77,14 @@ function Statistics() {
 				<StatisticTable statistics={statisticsData} />
 
 				<div className="my-4">
-					<div className="inline-flex w-full my-3 justify-center">
-						<button className="track-submit-button">Submit</button>
+					<div className="inline-flex w-full my-3 justify-end">
+						<button
+							className="track-submit-button"
+							onClick={() => {
+								navigate("/track")
+							}}>
+							Back
+						</button>
 					</div>
 				</div>
 			</div>
