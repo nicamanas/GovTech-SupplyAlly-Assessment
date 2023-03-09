@@ -41,7 +41,7 @@ function Navbar() {
 							{user ? (
 								<>
 									&#x1F44B; Hi
-									<p className="ml-1 font-bold">{user}! </p>
+									<p className="ml-1 font-bold">{user} </p>
 									<p className="mx-2"> | </p>
 									<a onClick={logout}>Logout</a>
 								</>

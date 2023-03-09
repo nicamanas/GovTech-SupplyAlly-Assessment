@@ -14,8 +14,8 @@ function Login() {
 	}
 
 	return (
-		<div className="login flex flex-col items-center justify-center">
-			<div className="card">
+		<div className="background flex flex-col items-center justify-center">
+			<div className="card align-center">
 				<div className="py-2 px-2 justify-center">
 					<h1 className="login-text">Login</h1>
 					<form onSubmit={handleSubmit}>
