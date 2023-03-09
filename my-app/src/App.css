@@ -117,6 +117,14 @@
 	max-width: 343px;
 }
 
+.track-expand {
+	display: flex;
+	flex-direction: column;
+	min-height: 40%;
+	min-width: 60%;
+	max-width: 80%;
+}
+
 .card-expand {
 	display: flex;
 	flex-direction: column;
@@ -124,10 +132,6 @@
 		0px 3px 14px rgba(33, 33, 33, 0.05), 0px 4px 5px rgba(33, 33, 33, 0.12);
 	border-radius: 12px;
 	background-color: #ffffff;
-
-	min-height: 40%;
-	min-width: 60%;
-	max-width: 80%;
 }
 
 .card-expand-top {
@@ -252,4 +256,49 @@
 .track-label {
 	line-height: 20px;
 	font-weight: 700;
+}
+
+.track-back-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 24px;
+	gap: 8px;
+
+	width: 86px;
+	height: 48px;
+
+	background: #ffffff;
+	border: 1px solid #305367;
+	border-radius: 4px;
+
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: #305367;
+}
+
+.track-submit-button {
+	justify-content: center;
+	align-items: center;
+	padding: 0px 24px;
+	gap: 8px;
+
+	width: 103px;
+	height: 48px;
+
+	background: #305367;
+	border-radius: 4px;
+
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
 }

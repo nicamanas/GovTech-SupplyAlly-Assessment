@@ -2,12 +2,20 @@ import React, { useState } from "react"
 import axios from "axios"
 import { ITrackingResult } from "../types/trackingTypes"
 import Status from "../reusables/status"
+import { Navigate, useNavigate } from "react-router-dom"
 
 function Track() {
 	const [trackingId, setTrackingId] = useState<string>("")
 	const [trackingData, setTrackingData] = useState<null | ITrackingResult>(
 		null
 	)
+	const [isChecked, setIsChecked] = useState<boolean>(false)
+
+	const navigate = useNavigate()
+
+	function handleCheckedChange(e: any) {
+		setIsChecked(e.target.checked)
+	}
 
 	async function getTrackingData(e: any) {
 		e.preventDefault()
@@ -23,21 +31,70 @@ function Track() {
 	return (
 		<div className="background flex flex-col items-center justify-center">
 			{trackingData ? (
-				<div className="card-expand">
-					<div className="card-expand-top">
-						<div className="card-expand-top-boxemoji">
-							&#x1F381;
+				<div className="my-4 track-expand">
+					<div className="card-expand">
+						<div className="card-expand-top">
+							<div className="card-expand-top-boxemoji">
+								&#x1F381;
+							</div>
+							<div className="px-3">
+								<p className="card-expand-top-label">
+									Tracking ID
+								</p>
+								<p className="card-expand-top-id">
+									{trackingId}
+								</p>
+							</div>
 						</div>
-						<div className="px-3">
-							<p className="card-expand-top-label">Tracking ID</p>
-							<p className="card-expand-top-id">{trackingId}</p>
+						<div>
+							<Status
+								trackingId={trackingId}
+								trackingResults={trackingData}
+							/>
 						</div>
 					</div>
-					<div>
-						<Status
-							trackingId={trackingId}
-							trackingResults={trackingData}
-						/>
+
+					<div className="my-4">
+						<form>
+							<div className="content-start">
+								<input
+									type="checkbox"
+									name="tracked"
+									id="tracked"
+									onChange={handleCheckedChange}
+								/>{" "}
+								<label htmlFor="tracked">
+									Marked as tracked.
+								</label>
+							</div>
+							<div className="my-6"></div>
+						</form>
+
+						<div className="inline-flex w-full my-3 justify-between">
+							<button
+								onClick={() => {
+									setTrackingId("")
+									setTrackingData(null)
+									navigate("/track")
+								}}
+								className="track-back-button">
+								Back
+							</button>
+							<button
+								onClick={() => {
+									alert(
+										isChecked
+											? "Package tracked"
+											: "Package not tracked"
+									)
+									setTrackingId("")
+									setTrackingData(null)
+									navigate("/track")
+								}}
+								className="track-submit-button">
+								Submit
+							</button>
+						</div>
 					</div>
 				</div>
 			) : (
