@@ -37,8 +37,12 @@ function convertString(dateObject: Date) {
 	}
 
 	let timeStr
-	if (hour < 12) {
+	if (hour == 0) {
 		timeStr = hour + ":" + minStr + " AM"
+	} else if (hour < 12) {
+		timeStr = hour + ":" + minStr + " AM"
+	} else if (hour == 12) {
+		timeStr = hour + ":" + minStr + " PM"
 	} else {
 		timeStr = hour - 12 + ":" + minStr + " PM"
 	}

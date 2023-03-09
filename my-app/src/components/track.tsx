@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import { ITrackingResult } from "../types/trackingTypes"
 import Status from "../reusables/status"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Track() {
 	const [trackingId, setTrackingId] = useState<string>("")

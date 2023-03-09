@@ -302,3 +302,64 @@
 	text-align: center;
 	color: #ffffff;
 }
+
+.statistics-title {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+	text-align: center;
+
+	color: #292b2c;
+}
+
+.statistics-summary-text {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	align-items: center;
+	text-align: center;
+	color: #292b2c;
+}
+
+.statistics-summary-number {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 72px;
+	text-align: center;
+	color: #292b2c;
+}
+
+.statistics-date-selector {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #292b2c;
+	text-align: center;
+
+	display: inline;
+}
+
+table.statistics-table {
+	border-collapse: collapse;
+}
+
+.statistics-table tr {
+	border-bottom: 2px solid #eceff3;
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #292b2c;
+}
+.statistics-table th,
+td {
+	padding: 10px;
+}
