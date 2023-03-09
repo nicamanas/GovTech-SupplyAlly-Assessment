@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 function Login() {
 	const navigate = useNavigate()
-	const { user, setUser } = useContext(UserContext)
+	const { setUser } = useContext(UserContext)
 
 	function handleSubmit(e: any) {
 		e.preventDefault()
