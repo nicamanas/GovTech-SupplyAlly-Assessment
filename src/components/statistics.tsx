@@ -50,7 +50,7 @@ function Statistics() {
 			alert("Please login before using this feature!")
 		}
 		getStatisticsData()
-	}, [user])
+	}, [user, navigate])
 
 	return (
 		<div className="background flex flex-col items-center justify-start py-4">

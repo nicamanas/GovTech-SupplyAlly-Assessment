@@ -8,19 +8,18 @@ import { UserContext } from "../reusables/layout"
 function Track() {
 	const navigate = useNavigate()
 	const { user } = useContext(UserContext)
+	const [trackingId, setTrackingId] = useState<string>("")
+	const [trackingData, setTrackingData] = useState<null | ITrackingResult>(
+		null
+	)
+	const [isChecked, setIsChecked] = useState<boolean>(false)
 
 	useEffect(() => {
 		if (!user) {
 			navigate("/")
 			alert("Please login before using this feature!")
 		}
-	}, [])
-
-	const [trackingId, setTrackingId] = useState<string>("")
-	const [trackingData, setTrackingData] = useState<null | ITrackingResult>(
-		null
-	)
-	const [isChecked, setIsChecked] = useState<boolean>(false)
+	}, [user, navigate])
 
 	function handleCheckedChange(e: any) {
 		setIsChecked(e.target.checked)
@@ -35,7 +34,8 @@ function Track() {
 			process.env.PUBLIC_URL + "/mockTrackingData.json"
 		)
 
-		if (trackingResult.data[trackingId]) {
+		// mock the api where we normally query with tracking id and return result
+		if (e.target.trackingId.value == "1234567000T") {
 			setTrackingData(trackingResult.data)
 		} else {
 			alert("Invalid Tracking ID received. Please try a different ID.")
