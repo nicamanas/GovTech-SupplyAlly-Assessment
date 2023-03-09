@@ -34,7 +34,12 @@ function Track() {
 		const trackingResult = await axios.get(
 			process.env.PUBLIC_URL + "/mockTrackingData.json"
 		)
-		setTrackingData(trackingResult.data)
+
+		if (trackingResult.data[trackingId]) {
+			setTrackingData(trackingResult.data)
+		} else {
+			alert("Invalid Tracking ID received. Please try a different ID.")
+		}
 	}
 
 	return (
