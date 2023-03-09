@@ -1,0 +1,162 @@
+.App {
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.navbar {
+	background-color: #ffffff;
+}
+
+.navbar-text {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #305367;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+
+	background: #305367;
+	height: 30%;
+}
+
+.footer-top {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 48px;
+	gap: 10px;
+
+	height: 60%;
+
+	/* border-bottom: 1px solid grey; */
+	background-color: #305367;
+}
+
+.footer-top-text {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+
+	color: #ffffff;
+}
+
+.footer-bottom {
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 24px 48px 64px;
+	gap: 24px;
+
+	box-shadow: inset 0px 1px 0px #4e7c98;
+}
+
+.footer-bottom-text {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #e3f2fb;
+	display: inline;
+}
+
+.login {
+	background-color: #f5f7f9;
+	flex: 1 1 auto;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 32px 24px;
+	gap: 32px;
+	background-color: #ffffff;
+
+	max-width: 343px;
+	max-height: 232px;
+}
+
+.login-text {
+	width: 295px;
+	height: 32px;
+
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	color: #33363a;
+}
+
+.login-field {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 12px;
+	gap: 8px;
+
+	width: 295px;
+	height: 48px;
+	background-color: #ffffff;
+	border: 1px solid #a1a8ae;
+	border-radius: 4px;
+}
+
+.login-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 24px;
+	gap: 8px;
+
+	width: 295px;
+	height: 48px;
+
+	background-color: #305367;
+	border-radius: 4px;
+}
