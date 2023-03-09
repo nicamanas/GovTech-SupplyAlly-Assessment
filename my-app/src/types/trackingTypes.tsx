@@ -1,4 +1,8 @@
 export interface IStatus {
-	datetime: string
+	datetime: number
 	status: string
+}
+
+export interface ITrackingResult {
+	[trackingId: string]: IStatus[]
 }

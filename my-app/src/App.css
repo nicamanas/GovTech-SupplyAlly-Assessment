@@ -117,6 +117,77 @@
 	max-width: 343px;
 }
 
+.card-expand {
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 8px 10px rgba(33, 33, 33, 0.06),
+		0px 3px 14px rgba(33, 33, 33, 0.05), 0px 4px 5px rgba(33, 33, 33, 0.12);
+	border-radius: 12px;
+	background-color: #ffffff;
+
+	min-height: 40%;
+	min-width: 60%;
+	max-width: 80%;
+}
+
+.card-expand-top {
+	display: inline-flex;
+	padding: 16px 24px;
+
+	height: 30%;
+	background-color: #305367;
+	border-radius: 12px 12px 0px 0px;
+	color: white;
+	max-height: 80px;
+}
+
+.card-expand-top-boxemoji {
+	font-size: 24px;
+	line-height: 20px;
+}
+
+.card-expand-top-label {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.card-expand-top-id {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.card-expand-bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 32px 24px;
+	gap: 32px;
+}
+
+.track-date {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	display: flex;
+	align-items: center;
+}
+
+.track-status {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
 .login-text {
 	width: 295px;
 	height: 32px;

@@ -1,25 +1,45 @@
 import React, { useState } from "react"
 import axios from "axios"
-import { IStatus } from "../types/trackingTypes"
+import { ITrackingResult } from "../types/trackingTypes"
+import Status from "../reusables/status"
 
 function Track() {
-	const [trackingData, setTrackingData] = useState(null)
+	const [trackingId, setTrackingId] = useState<string>("")
+	const [trackingData, setTrackingData] = useState<null | ITrackingResult>(
+		null
+	)
 
 	async function getTrackingData(e: any) {
 		e.preventDefault()
 
-		const trackingId = e.target.trackingId.value
+		setTrackingId(e.target.trackingId.value)
 
 		const trackingResult = await axios.get(
 			process.env.PUBLIC_URL + "/mockTrackingData.json"
 		)
-		setTrackingData(trackingResult.data[trackingId])
+		setTrackingData(trackingResult.data)
 	}
 
 	return (
 		<div className="background flex flex-col items-center justify-center">
 			{trackingData ? (
-				<div className="card"></div>
+				<div className="card-expand">
+					<div className="card-expand-top">
+						<div className="card-expand-top-boxemoji">
+							&#x1F381;
+						</div>
+						<div className="px-3">
+							<p className="card-expand-top-label">Tracking ID</p>
+							<p className="card-expand-top-id">{trackingId}</p>
+						</div>
+					</div>
+					<div>
+						<Status
+							trackingId={trackingId}
+							trackingResults={trackingData}
+						/>
+					</div>
+				</div>
 			) : (
 				<div className="card">
 					<div className="track-header-text">Track parcel</div>
