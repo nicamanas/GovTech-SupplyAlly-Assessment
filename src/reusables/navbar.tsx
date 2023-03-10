@@ -108,10 +108,22 @@ function Navbar() {
 						<div className="mobile-navbar">
 							<ul>
 								<li>
-									<Link to="/track">Track</Link>
+									<Link
+										onClick={() => {
+											setNavbarOpen(false)
+										}}
+										to="/track">
+										Track
+									</Link>
 								</li>
 								<li>
-									<Link to="/statistics">Statistics</Link>
+									<Link
+										onClick={() => {
+											setNavbarOpen(false)
+										}}
+										to="/statistics">
+										Statistics
+									</Link>
 								</li>
 								<li>
 									<a onClick={logout}>Logout</a>
