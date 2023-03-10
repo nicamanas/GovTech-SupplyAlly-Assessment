@@ -193,9 +193,6 @@
 }
 
 .login-text {
-	width: 295px;
-	height: 32px;
-
 	font-family: "IBM Plex Sans";
 	font-style: normal;
 	font-weight: 700;
@@ -362,4 +359,21 @@ table.statistics-table {
 .statistics-table th,
 td {
 	padding: 10px;
+}
+
+.mobile-navbar {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 14px 16px;
+	gap: 10px;
+	font-family: "IBM Plex Sans";
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #305367;
+}
+
+.mobile-navbar li {
+	margin: 10px;
 }
