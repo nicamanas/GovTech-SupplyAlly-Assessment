@@ -9,6 +9,7 @@ function Navbar() {
 
 	function logout(): void {
 		setUser("")
+		setNavbarOpen(false)
 		alert("You have logged out.")
 		navigate("/")
 	}
@@ -102,6 +103,24 @@ function Navbar() {
 							)}
 						</div>
 					</div>
+
+					{navbarOpen ? (
+						<div className="mobile-navbar">
+							<ul>
+								<li>
+									<Link to="/track">Track</Link>
+								</li>
+								<li>
+									<Link to="/statistics">Statistics</Link>
+								</li>
+								<li>
+									<a onClick={logout}>Logout</a>
+								</li>
+							</ul>
+						</div>
+					) : (
+						<></>
+					)}
 				</div>
 			</nav>
 		</>
